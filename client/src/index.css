@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+body {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
