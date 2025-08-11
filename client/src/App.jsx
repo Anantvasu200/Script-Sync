@@ -12,6 +12,8 @@ import UserPage from "./components/UserPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { Analytics } from '@vercel/analytics/react';
+
 const baseURL = import.meta.env.VITE_BACKEND_URL;
 
 function App() {
@@ -90,6 +92,7 @@ function App() {
         <Route path="/read-blogs" element={<ReadBlogPage />} />
         <Route path="/read-blogs/:id" element={<ReadFullComponent />} />
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 }
