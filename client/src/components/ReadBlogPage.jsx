@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { toast } from "react-toastify";
 
+const baseURL = import.meta.env.VITE_BACKEND_URL;
 const ReadBlogPage = () => {
     const [posts, setPosts] = useState([]);
     const [filteredPosts, setFilteredPosts] = useState([]);
@@ -24,7 +25,7 @@ const ReadBlogPage = () => {
         const fetchPosts = async () => {
             try {
                 const res = await fetch(
-                    `http://localhost:5000/api/posts?page=${currentPage}`
+                    `${baseURL}/api/posts?page=${currentPage}`
                 );
                 const data = await res.json();
 
@@ -163,7 +164,7 @@ const ReadBlogPage = () => {
                             <img
                                 src={
                                     post.coverImage
-                                        ? `http://localhost:5000${post.coverImage}`
+                                        ? `${baseURL}${post.coverImage}`
                                         : "https://via.placeholder.com/400x250"
                                 }
                                 alt={post.title}

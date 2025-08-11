@@ -8,7 +8,7 @@ import Italic from "@tiptap/extension-italic";
 import BulletList from "@tiptap/extension-bullet-list";
 import Image from "@tiptap/extension-image";
 
-const BASE_URL = "http://localhost:5000"; 
+const baseURL = import.meta.env.VITE_BACKEND_URL;
 
 const WritePost = ({ currentUser }) => {
     const [title, setTitle] = useState("");
@@ -41,7 +41,7 @@ const WritePost = ({ currentUser }) => {
   try {
     setLoading(true);
     const res = await fetch(
-      `${BASE_URL}/api/posts/user/${currentUser._id}?page=${pageNum}&limit=10`
+      `${baseURL}/api/posts/user/${currentUser._id}?page=${pageNum}&limit=10`
     );
     if (!res.ok) throw new Error("Failed to fetch posts");
     const data = await res.json();
@@ -91,7 +91,7 @@ useEffect(() => {
             formData.append("content", editor.getHTML());
             if (coverImage) formData.append("coverImage", coverImage);
 
-            const res = await fetch(`${BASE_URL}/api/posts`, {
+            const res = await fetch(`${baseURL}/api/posts`, {
                 method: "POST",
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -234,7 +234,7 @@ useEffect(() => {
                                         src={
                                             post.coverImage.startsWith("http")
                                                 ? post.coverImage
-                                                : `${BASE_URL}${post.coverImage}`
+                                                : `${baseURL}${post.coverImage}`
                                         }
                                         alt="Cover"
                                         loading="lazy"

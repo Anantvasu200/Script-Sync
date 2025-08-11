@@ -11,6 +11,8 @@ import {
     FaSun,
 } from "react-icons/fa";
 
+const baseURL = import.meta.env.VITE_BACKEND_URL;
+
 const shareUrls = (url, title) => ({
     twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(
         url
@@ -41,7 +43,7 @@ const ReadFullComponent = () => {
                 setLoading(true);
                 setError(null);
 
-                const response = await fetch(`http://localhost:5000/api/posts/${id}`);
+                const response = await fetch(`${baseURL}/api/posts/${id}`);
                 if (!response.ok) throw new Error("Failed to fetch post");
                 const data = await response.json();
                 setPost(data.post);
@@ -136,7 +138,7 @@ const ReadFullComponent = () => {
                     {post.coverImage && (
                         <img
                             loading="lazy"
-                            src={`http://localhost:5000${post.coverImage}`}
+                            src={`${baseURL}${post.coverImage}`}
                             alt={post.title}
                             className="w-full rounded-lg mb-12 shadow-md max-h-[500px] object-cover"
                         />

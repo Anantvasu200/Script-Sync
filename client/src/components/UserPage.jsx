@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FaUserCircle, FaRegHeart } from "react-icons/fa";
 import { toast } from "react-toastify";
 
-const BASE_URL = "http://localhost:5000";
+const baseURL = import.meta.env.VITE_BACKEND_URL;
 
 // Animated Button component
 const AnimatedButton = ({ children, onClick, variant = "primary", className = "" }) => {
@@ -67,7 +67,7 @@ export default function UserPage({ currentUser, setCurrentUser }) {
             setError(null);
 
             try {
-                const url = `${BASE_URL}/api/posts/user/${userId}?page=1&limit=10`;
+                const url = `${baseURL}/api/posts/user/${userId}?page=1&limit=10`;
 
                 const res = await fetch(url, {
                     headers: { Authorization: `Bearer ${token}` },
@@ -224,7 +224,7 @@ export default function UserPage({ currentUser, setCurrentUser }) {
                                         >
                                             {post.coverImage ? (
                                                 <img
-                                                    src={`${BASE_URL}${post.coverImage}`}
+                                                    src={`${baseURL}${post.coverImage}`}
                                                     alt={post.title}
                                                     className="h-44 w-full object-cover"
                                                     onError={(e) => {
@@ -269,7 +269,6 @@ export default function UserPage({ currentUser, setCurrentUser }) {
                             )}
                         </div>
                     </main>
-
                 </div>
             </div>
         </div>
