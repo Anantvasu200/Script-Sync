@@ -56,7 +56,7 @@ const LoginPage = ({ setCurrentUser }) => {
                 <div className="flex items-center justify-center px-4 sm:px-6 lg:px-12">
                     <div className="max-w-sm p-8 rounded-xl shadow-lg bg-white">
                         <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-                            Login to Dev Talk
+                            Login Script Sync
                         </h2>
                         <form onSubmit={handleSubmit} className="space-y-5">
                             <div>

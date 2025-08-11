@@ -50,7 +50,7 @@ const SignupPage = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-white font-ibm overflow-hidden">
             <div className="w-full max-w-sm p-8 rounded-xl shadow-lg bg-white">
                 <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-                    Sign Up for Dev Talk
+                    Sign Up for Script Sync
                 </h2>
 
                 <form onSubmit={handleSubmit} className="space-y-5">

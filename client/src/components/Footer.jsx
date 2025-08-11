@@ -63,13 +63,13 @@ const Footer = () => {
                 <div className="border-t border-gray-700 mt-8">
                     <div className="px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500">
                         <div className="flex space-x-4 text-lg mb-3 sm:mb-0">
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                            <a href="https://github.com/Anantvasu200" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                                 <FaGithub />
                             </a>
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                            <a href="https://x.com/AvAwasthi" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                                 <FaTwitter />
                             </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                            <a href="https://www.linkedin.com/in/anant-kumar-awasthi-422840201/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                                 <FaLinkedin />
                             </a>
                         </div>
